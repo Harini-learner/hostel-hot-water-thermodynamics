@@ -3,60 +3,192 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hostel Hot Water Thermodynamics</title>
+  <title>Hostel Hot-Water Thermodynamics Dashboard</title>
   <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: #f4f7f6; color: #333; }
-    header { text-align: center; padding: 20px 0; background: #005f73; color: white; border-radius: 10px; margin-bottom: 20px; }
-    header h1 { margin: 0; font-size: 1.8rem; }
-    header p { margin: 5px 0 0; opacity: 0.9; }
-    
-    /* Navigation Grid */
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; max-width: 1100px; margin: 0 auto 20px auto; }
-    .card { background: white; padding: 14px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; color: #005f73; font-weight: bold; border-left: 5px solid #0a9396; cursor: pointer; transition: transform 0.2s, background 0.2s; font-size: 0.95rem; }
-    .card:hover { transform: translateY(-3px); background: #e0f2f1; }
-    .card.active { background: #005f73; color: white; border-left-color: #ee9b00; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
-    /* Embedded Web Viewer */
-    .viewer-container { max-width: 1100px; margin: 0 auto; background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .viewer-title { margin: 0 0 10px 0; font-size: 1.1rem; color: #005f73; font-weight: bold; }
-    iframe { width: 100%; height: 680px; border: 1px solid #ddd; border-radius: 6px; background: #fafafa; }
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    header {
+      margin-bottom: 24px;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      color: #1e293b;
+      font-weight: 700;
+    }
+
+    header p {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .card-btn {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .card-btn:hover {
+      border-color: #0284c7;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-btn.active {
+      background-color: #f0f9ff;
+      border-color: #0284c7;
+      box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2);
+    }
+
+    .card-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #0284c7;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .viewer-container {
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-height: 600px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .viewer-header {
+      background: #f1f5f9;
+      padding: 12px 20px;
+      border-bottom: 1px solid #e2e8f0;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      flex: 1;
+      border: none;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Hostel Hot Water Thermodynamics</h1>
-    <p>Interactive Project Dashboard & Embedded Module Viewer</p>
+    <h1>Hostel Hot-Water Thermodynamics Dashboard</h1>
+    <p>Interactive Study & Field Evidence Viewer (58 Heaters | 7 Girls' Hostels)</p>
   </header>
 
-  <div class="grid">
-    <!-- Note: Replace '.pdf' file paths below with your exact document file names if different -->
-    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/01-Project-Overview/overview.pdf', '01. Project Overview', this)">01. Overview</div>
-    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/02-System-Study/study.pdf', '02. System Study', this)">02. System Study</div>
-    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/03-Thermodynamic-Analysis/analysis.pdf', '03. Thermodynamic Analysis', this)">03. Thermal Analysis</div>
-    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/04-Calculations/calculations.pdf', '04. Calculations', this)">04. Calculations</div>
-    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/05-Graphs/graphs.pdf', '05. Performance Graphs', this)">05. Graphs</div>
-    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/06-AI-Visualizations/renders.pdf', '06. AI Visualizations', this)">06. AI Renders</div>
-    <div class="card active" onclick="loadModule('./hostel-hot-water-thermodynamics/07-Thermodynamics-Simulator/index.html', '07. Thermodynamics Simulator', this)">07. Simulator ⚡</div>
-    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/08-Documentary/doc.pdf', '08. Documentary', this)">08. Documentary</div>
-    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/09-Final-Report/report.pdf', '09. Final Report', this)">09. Final Report</div>
-    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/10-Field-Evidence/evidence.pdf', '10. Field Evidence', this)">10. Field Evidence</div>
+  <div class="dashboard-grid">
+    <button class="card-btn active" onclick="loadModule('./01-Project-Overview/28-Content-Thermodynamic-Study.md', '01 - Project Overview', this)">
+      <span class="card-num">Module 01</span>
+      <span class="card-title">Project Overview</span>
+    </button>
+
+    <button class="card-btn" onclick="loadModule('./02-System-Study/System-Description.md', '02 - System Study', this)">
+      <span class="card-num">Module 02</span>
+      <span class="card-title">System Study</span>
+    </button>
+
+    <button class="card-btn" onclick="loadModule('./03-Thermodynamic-Analysis/First-Law.md', '03 - Thermodynamic Analysis', this)">
+      <span class="card-num">Module 03</span>
+      <span class="card-title">Thermodynamic Analysis</span>
+    </button>
+
+    <button class="card-btn" onclick="loadModule('./04-Calculations/Heat-Required.md', '04 - Calculations', this)">
+      <span class="card-num">Module 04</span>
+      <span class="card-title">Calculations</span>
+    </button>
+
+    <button class="card-btn" onclick="loadModule('./05-Graphs/README.md', '05 - Graphs', this)">
+      <span class="card-num">Module 05</span>
+      <span class="card-title">Graphs</span>
+    </button>
+
+    <button class="card-btn" onclick="loadModule('./06-AI-Visualizations/Prompts.md', '06 - AI Visualizations', this)">
+      <span class="card-num">Module 06</span>
+      <span class="card-title">AI Visualizations</span>
+    </button>
+
+    <button class="card-btn" onclick="loadModule('./07-Thermodynamics-Simulator/index.html', '07 - Thermodynamics Simulator', this)">
+      <span class="card-num">Module 07</span>
+      <span class="card-title">Simulator App</span>
+    </button>
+
+    <button class="card-btn" onclick="loadModule('./08-Documentary/Observation-and-Documentary.md', '08 - Documentary', this)">
+      <span class="card-num">Module 08</span>
+      <span class="card-title">Documentary</span>
+    </button>
+
+    <button class="card-btn" onclick="loadModule('./09-Final-Report/Conclusion.md', '09 - Final Report', this)">
+      <span class="card-num">Module 09</span>
+      <span class="card-title">Final Report</span>
+    </button>
+
+    <button class="card-btn" onclick="loadModule('./10-Field-Evidence/README.md', '10 - Field Evidence', this)">
+      <span class="card-num">Module 10</span>
+      <span class="card-title">Field Evidence</span>
+    </button>
   </div>
 
   <div class="viewer-container">
-    <div id="viewer-header" class="viewer-title">07. Thermodynamics Simulator</div>
-    <iframe id="app-frame" src="./hostel-hot-water-thermodynamics/07-Thermodynamics-Simulator/index.html" title="Module Content"></iframe>
+    <div class="viewer-header">
+      <span id="current-module-title">01 - Project Overview</span>
+    </div>
+    <iframe id="app-frame" src="./01-Project-Overview/28-Content-Thermodynamic-Study.md"></iframe>
   </div>
 
   <script>
-    function loadModule(url, title, element) {
-      document.getElementById('app-frame').src = url;
-      document.getElementById('viewer-header').innerText = title;
+    function loadModule(filePath, title, element) {
+      document.getElementById('app-frame').src = filePath;
+      document.getElementById('current-module-title').textContent = title;
       
-      // Update active button styling
-      let cards = document.querySelectorAll('.card');
-      cards.forEach(card => card.classList.remove('active'));
-      element.classList.add('active');
+      const buttons = document.querySelectorAll('.card-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      
+      if (element) {
+        element.classList.add('active');
+      }
     }
   </script>
 

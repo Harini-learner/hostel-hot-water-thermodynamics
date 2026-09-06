@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel Hot-Water Thermodynamics Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: #f8fafc; color: #0f172a; display: flex; flex-direction: column; min-height: 100vh; padding: 24px; }
+    header { margin-bottom: 24px; }
+    header h1 { font-size: 1.6rem; color: #1e293b; font-weight: 700; }
+    header p { color: #64748b; font-size: 0.9rem; margin-top: 4px; }
+    .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .card-btn { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 14px; text-align: left; cursor: pointer; transition: all 0.2s ease; display: flex; flex-direction: column; gap: 4px; }
+    .card-btn:hover { border-color: #0284c7; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .card-btn.active { background-color: #f0f9ff; border-color: #0284c7; box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2); }
+    .card-num { font-size: 0.7rem; font-weight: 700; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px; }
+    .card-title { font-size: 0.88rem; font-weight: 600; color: #334155; }
+    .viewer-container { flex: 1; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; min-height: 600px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .viewer-header { background: #f1f5f9; padding: 12px 20px; border-bottom: 1px solid #e2e8f0; font-weight: 600; font-size: 0.95rem; color: #334155; }
+    .content-box { padding: 28px; overflow-y: auto; height: 100%; line-height: 1.6; color: #1e293b; }
+    .content-box h1, .content-box h2, .content-box h3 { margin-top: 20px; margin-bottom: 10px; color: #0f172a; }
+    .content-box p { margin-bottom: 12px; color: #334155; }
+    .content-box table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    .content-box th, .content-box td { border: 1px solid #cbd5e1; padding: 10px 14px; text-align: left; }
+    .content-box th { background-color: #f1f5f9; }
+    .content-box ul, .content-box ol { margin-left: 20px; margin-bottom: 12px; }
+    iframe { width: 100%; height: 100%; min-height: 580px; border: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hostel Hot-Water Thermodynamics Dashboard</h1>
+    <p>Interactive Study & Field Evidence Viewer (58 Heaters | 7 Girls' Hostels)</p>
+  </header>
+
+  <div class="dashboard-grid">
+    <button class="card-btn active" onclick="loadContent('01-Project-Overview/28-Content-Thermodynamic-Study.md', '01 - Project Overview', 'md', this)">
+      <span class="card-num">Module 01</span>
+      <span class="card-title">Project Overview</span>
+    </button>
+    <button class="card-btn" onclick="loadContent('02-System-Study/System-Description.md', '02 - System Study', 'md', this)">
+      <span class="card-num">Module 02</span>
+      <span class="card-title">System Study</span>
+    </button>
+    <button class="card-btn" onclick="loadContent('03-Thermodynamic-Analysis/First-Law.md', '03 - Thermodynamic Analysis', 'md', this)">
+      <span class="card-num">Module 03</span>
+      <span class="card-title">Thermodynamic Analysis</span>
+    </button>
+    <button class="card-btn" onclick="loadContent('04-Calculations/Heat-Required.md', '04 - Calculations', 'md', this)">
+      <span class="card-num">Module 04</span>
+      <span class="card-title">Calculations</span>
+    </button>
+    <button class="card-btn" onclick="loadContent('05-Graphs/README.md', '05 - Graphs', 'md', this)">
+      <span class="card-num">Module 05</span>
+      <span class="card-title">Graphs</span>
+    </button>
+    <button class="card-btn" onclick="loadContent('06-AI-Visualizations/Prompts.md', '06 - AI Visualizations', 'md', this)">
+      <span class="card-num">Module 06</span>
+      <span class="card-title">AI Visualizations</span>
+    </button>
+    <button class="card-btn" onclick="loadContent('07-Thermodynamics-Simulator/index.html', '07 - Thermodynamics Simulator', 'html', this)">
+      <span class="card-num">Module 07</span>
+      <span class="card-title">Simulator App</span>
+    </button>
+    <button class="card-btn" onclick="loadContent('08-Documentary/Observation-and-Documentary.md', '08 - Documentary', 'md', this)">
+      <span class="card-num">Module 08</span>
+      <span class="card-title">Documentary</span>
+    </button>
+    <button class="card-btn" onclick="loadContent('09-Final-Report/Conclusion.md', '09 - Final Report', 'md', this)">
+      <span class="card-num">Module 09</span>
+      <span class="card-title">Final Report</span>
+    </button>
+    <button class="card-btn" onclick="loadContent('10-Field-Evidence/README_3.md', '10 - Field Evidence', 'md', this)">
+      <span class="card-num">Module 10</span>
+      <span class="card-title">Field Evidence</span>
+    </button>
+  </div>
+
+  <div class="viewer-container">
+    <div class="viewer-header">
+      <span id="current-module-title">01 - Project Overview</span>
+    </div>
+    <div id="view-area" style="flex: 1;">
+      <div id="content-box" class="content-box">Loading content...</div>
+    </div>
+  </div>
+
+  <script>
+    function loadContent(filePath, title, type, element) {
+      document.getElementById('current-module-title').textContent = title;
+      
+      const buttons = document.querySelectorAll('.card-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      if (element) element.classList.add('active');
+
+      const viewArea = document.getElementById('view-area');
+
+      if (type === 'html') {
+        viewArea.innerHTML = '<iframe src="./' + filePath + '"></iframe>';
+      } else {
+        viewArea.innerHTML = '<div id="content-box" class="content-box">Loading document...</div>';
+        fetch('./' + filePath)
+          .then(response => {
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            return response.text();
+          })
+          .then(text => {
+            document.getElementById('content-box').innerHTML = marked.parse(text);
+          })
+          .catch(err => {
+            document.getElementById('content-box').innerHTML = '<p style="color: #dc2626; font-weight: bold;">Could not load document: ' + filePath + '</p><p style="color: #64748b; margin-top: 8px;">Ensure the filename in GitHub matches this path exactly.</p>';
+          });
+      }
+    }
+
+    window.onload = function() {
+      const firstBtn = document.querySelector('.card-btn');
+      loadContent('01-Project-Overview/28-Content-Thermodynamic-Study.md', '01 - Project Overview', 'md', firstBtn);
+    };
+  </script>
+
+</body>
+</html>

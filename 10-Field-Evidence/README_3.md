@@ -7,40 +7,40 @@ This module details on-site equipment metadata, manufacturer specifications, ver
 ## 1. On-Site Physical Inspection Gallery
 
 ### Manufacturer Specification Labels
-![V-Guard Technical Label](vguard-spec-label.jpg)
+![V-Guard Technical Label](./vguard-spec-label.jpg)
 *Figure 1.1: V-Guard Steamer Plus ECS 25 nameplate (230V, 50Hz, 2 kW power rating, 25 L capacity, 8 Kg/cm² pressure rating).*
 
-![BEE Energy Rating Guide](bee-energy-label.jpg)
+![BEE Energy Rating Guide](./bee-energy-label.jpg)
 *Figure 1.2: BEE Power Savings Guide verifying a standing loss of 0.511 kWh/24hr for 25 L stationary storage units.*
 
-![Venus Technical Label](venus-spec-label.jpg)
+![Venus Technical Label](./venus-spec-label.jpg)
 *Figure 1.3: Venus 25GV technical label specifying 2000 W rated power, IPX4 protection, and max reheating time of 44 minutes to 45 °C.*
 
 ---
 
 ### Installed Units & Inventory Tracking
-![Venus Magma Plus - Unit H008](venus-unit-h008.jpg)
+![Venus Magma Plus - Unit H008](./venus-unit-h008.jpg)
 *Figure 1.4: Installed Venus Magma Plus unit logged under inventory code ECH/H008/10.2023.*
 
-![Venus Magma Plus - Unit H027](venus-unit-h027.jpg)
+![Venus Magma Plus - Unit H027](./venus-unit-h027.jpg)
 *Figure 1.5: Installed Venus Magma Plus unit logged under inventory code H.027/27.03.2024.*
 
-![V-Guard Unit Assembly](vguard-unit-mounted.jpg)
+![V-Guard Unit Assembly](./vguard-unit-mounted.jpg)
 *Figure 1.6: Wall-mounted V-Guard Steamer Plus ECS series with temperature indicator dial.*
 
 ---
 
 ### Plumbing & Electrical Connection Infrastructure
-![Venus Flexible Connections](venus-connections-close.jpg)
+![Venus Flexible Connections](./venus-connections-close.jpg)
 *Figure 1.7: Flexible stainless-steel braided inlet/outlet lines, isolation gate valve, and CPVC piping tree.*
 
-![Venus Connection Assembly Angle](venus-connections-angle.jpg)
+![Venus Connection Assembly Angle](./venus-connections-angle.jpg)
 *Figure 1.8: Underbody view showing thermostat control dial, power indicator LEDs, and inlet cold-water supply connection.*
 
-![Ashirvad CPVC Vertical Riser](cpvc-pipe-run.jpg)
+![Ashirvad CPVC Vertical Riser](./cpvc-pipe-run.jpg)
 *Figure 1.9: Ashirvad FlowGuard Plus CPVC vertical line supplying hot water to user tap.*
 
-![V-Guard Full Installation](vguard-full-setup.jpg)
+![V-Guard Full Installation](./vguard-full-setup.jpg)
 *Figure 1.10: Complete vertical elevation showing electrical outlet, wall-mounted unit, CPVC drop lines, and dual supply taps.*
 
 ---
@@ -49,18 +49,18 @@ This module details on-site equipment metadata, manufacturer specifications, ver
 
 | Parameter | V-Guard Steamer Plus | Venus Magma Plus (25GV) |
 | :--- | :--- | :--- |
-| **Nominal Volume ($V$)** | 25 Liters | 25 Liters |
-| **Rated Power ($P$)** | $2.0\text{ kW}$ ($2000\text{ W}$) | $2.0\text{ kW}$ ($2000\text{ W}$) |
-| **Operating Voltage** | $230\text{ V AC}, 50\text{ Hz}$ | $230\text{ V AC}, 50\text{ Hz}$ |
-| **Rated Operating Pressure** | $0.8\text{ MPa}$ ($8\text{ Kg/cm}^2$) | $0.8\text{ MPa}$ ($8\text{ bar}$) |
-| **Standing Loss ($Q_{loss}$)** | $0.521\text{ kWh/24hr}$ (Est.) | $0.511\text{ kWh/24hr}$ (BEE Verified) |
-| **Max Reheating Time** | $\approx 45\text{ mins}$ | $44\text{ mins}$ (Cold to $45\ ^\circ\text{C}$) |
+| **Nominal Volume (V)** | 25 Liters | 25 Liters |
+| **Rated Power (P)** | 2.0 kW (2000 W) | 2.0 kW (2000 W) |
+| **Operating Voltage** | 230 V AC, 50 Hz | 230 V AC, 50 Hz |
+| **Rated Operating Pressure** | 0.8 MPa (8 Kg/cm²) | 0.8 MPa (8 bar) |
+| **Standing Loss (Q_loss)** | 0.521 kWh/24hr (Est.) | 0.511 kWh/24hr (BEE Verified) |
+| **Max Reheating Time** | ≈ 45 mins | 44 mins (Cold to 45 °C) |
 | **Ingress Protection** | Class I | IPX4 Splash Proof |
 | **Piping Material** | CPVC (Ashirvad FlowGuard) | CPVC (Ashirvad FlowGuard) |
 
 ---
 
 ## 3. Observational Summary Notes
-* **Thermal Performance:** Measured full reheating times align closely with manufacturer specs ($44\text{ minutes}$ for a $25\text{ L}$ batch).
-* **Standby Losses:** BEE Star ratings verify continuous jacket heat loss of $0.511\text{ kWh/24hr}$ when left energized constantly without draw.
+* **Thermal Performance:** Measured full reheating times align closely with manufacturer specs (44 minutes for a 25 L batch).
+* **Standby Losses:** BEE Star ratings verify continuous jacket heat loss of 0.511 kWh/24hr when left energized constantly without draw.
 * **Plumbing System:** Distribution uses high-temperature rated Ashirvad FlowGuard Plus CPVC lines with flexible braided connectors.

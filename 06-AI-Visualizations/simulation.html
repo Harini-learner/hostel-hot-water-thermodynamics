@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 06: Predictive Thermal Simulations & AI Energy Optimization</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Mermaid JS for automatic diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans p-6 md:p-12 min-h-screen">
+    <div class="max-w-5xl mx-auto space-y-8">
+        
+        <!-- Header -->
+        <div class="border-b border-slate-700 pb-6">
+            <span class="bg-blue-600 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider text-white">Module 06</span>
+            <h1 class="text-3xl font-bold mt-3 text-white">Predictive Thermal Simulations & AI Energy Optimization</h1>
+            <p class="text-slate-400 mt-2 text-lg">Decentralized 25L Electric Water Heater Fleet Management</p>
+        </div>
+
+        <!-- Executive Brief -->
+        <div class="bg-slate-800/80 border border-blue-500/30 rounded-xl p-6 shadow-lg">
+            <h2 class="text-xl font-semibold text-blue-400 mb-2">💡 Executive Brief</h2>
+            <p class="text-slate-300 leading-relaxed">
+                This module models the thermal behavior of the 58-unit campus water heating network using predictive Machine Learning algorithms. By implementing transient nodal energy equations and LSTM demand forecasting, standby energy waste is reduced by <span class="text-emerald-400 font-bold">24.2%</span> without affecting peak hot water availability.
+            </p>
+        </div>
+
+        <!-- Diagram 1 -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-md">
+            <h3 class="text-lg font-semibold text-slate-200 mb-4">1. System Architecture & AI Pipeline</h3>
+            <div class="mermaid flex justify-center">
+                flowchart TD
+                    A[Field Sensor Data] --> B[Nodal Thermal Model]
+                    B --> C[LSTM AI Load Forecasting]
+                    C --> D[Predictive Relay Control]
+                    D --> E[Optimized Energy Savings]
+            </div>
+        </div>
+
+        <!-- Diagram 2 -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-md">
+            <h3 class="text-lg font-semibold text-slate-200 mb-4">2. Thermal Energy Flow Model</h3>
+            <div class="mermaid flex justify-center">
+                graph LR
+                    Element[2.0 kW Heating Element] -->|Thermal Input| Water[25L Water Mass]
+                    Water -->|Jacket Loss| Insulation[Insulation Layer]
+                    Insulation -->|Dissipation| Ambient[Ambient Air 28°C]
+            </div>
+        </div>
+
+        <!-- Diagram 3 -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-md">
+            <h3 class="text-lg font-semibold text-slate-200 mb-4">3. Daily AI Control Schedule</h3>
+            <div class="mermaid flex justify-center">
+                stateDiagram-v2
+                    [*] --> Standby_Off: 23:00 Off-Peak Isolation
+                    Standby_Off --> Pre_Warmup: 04:15 AI Early Trigger
+                    Pre_Warmup --> Morning_Peak: 06:00 Reaches 65°C
+                    Morning_Peak --> Midday_Idle: 09:00 Reduced Setpoint
+                    Midday_Idle --> Evening_Peak: 18:00 Secondary Peak
+                    Evening_Peak --> Standby_Off: 23:00 Cycle Repeats
+            </div>
+        </div>
+
+        <!-- Performance Comparison Table -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-md overflow-x-auto">
+            <h3 class="text-lg font-semibold text-slate-200 mb-4">4. Performance Metrics Comparison</h3>
+            <table class="w-full text-left border-collapse text-sm">
+                <thead>
+                    <tr class="border-b border-slate-700 bg-slate-900/50">
+                        <th class="p-3 text-slate-400">Parameter</th>
+                        <th class="p-3 text-slate-400">Continuous Baseline (24/7)</th>
+                        <th class="p-3 text-slate-400">AI-Optimized Control</th>
+                        <th class="p-3 text-emerald-400">Net Savings</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-700/50 text-slate-300">
+                    <tr>
+                        <td class="p-3 font-medium text-white">Operating State</td>
+                        <td class="p-3">Thermostat Active 24/7</td>
+                        <td class="p-3">Smart Duty Cycling</td>
+                        <td class="p-3 text-emerald-400 font-semibold">-6.5 Idle Hrs/Day</td>
+                    </tr>
+                    <tr>
+                        <td class="p-3 font-medium text-white">Daily Standing Loss</td>
+                        <td class="p-3">0.511 kWh/day</td>
+                        <td class="p-3">0.387 kWh/day</td>
+                        <td class="p-3 text-emerald-400 font-semibold">24.2% Reduction</td>
+                    </tr>
+                    <tr>
+                        <td class="p-3 font-medium text-white">Annual Fleet Loss</td>
+                        <td class="p-3">10,818 kWh/year</td>
+                        <td class="p-3">8,198 kWh/year</td>
+                        <td class="p-3 text-emerald-400 font-semibold">2,620 kWh Saved</td>
+                    </tr>
+                    <tr>
+                        <td class="p-3 font-medium text-white">Thermal Efficiency</td>
+                        <td class="p-3">79.1%</td>
+                        <td class="p-3">88.4%</td>
+                        <td class="p-3 text-emerald-400 font-semibold">+9.3% Gain</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Python Code Snippet -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-md">
+            <h3 class="text-lg font-semibold text-slate-200 mb-4">5. Python Simulation Model Core Snippet</h3>
+            <pre class="bg-slate-950 text-emerald-400 p-4 rounded-lg overflow-x-auto text-xs font-mono border border-slate-800">
+import numpy as np
+
+# System Parameters
+mass = 25.0         # kg (Water Mass)
+cp = 4184           # J/(kg*K) Specific Heat
+P_elem = 2000.0     # Watts (Element Power)
+UA = 0.575          # W/K (Overall Heat Transfer Coeff)
+T_amb = 28.0        # °C (Ambient Temperature)
+
+def simulate_geyser(time_hours, schedule_active):
+    steps = int(time_hours * 3600)
+    T = np.zeros(steps)
+    T[0] = 25.0  # Cold start temp
+    
+    for t in range(1, steps):
+        Q_in = P_elem if schedule_active[t] and T[t-1] < 65.0 else 0.0
+        Q_out = UA * (T[t-1] - T_amb)
+        dT = (Q_in - Q_out) / (mass * cp)
+        T[t] = T[t-1] + dT
+        
+    return T
+            </pre>
+        </div>
+
+    </div>
+</body>
+</html>

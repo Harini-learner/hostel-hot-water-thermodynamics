@@ -6,34 +6,59 @@
   <title>Hostel Hot Water Thermodynamics</title>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: #f4f7f6; color: #333; }
-    header { text-align: center; padding: 20px 0; background: #005f73; color: white; border-radius: 10px; margin-bottom: 25px; }
+    header { text-align: center; padding: 20px 0; background: #005f73; color: white; border-radius: 10px; margin-bottom: 20px; }
     header h1 { margin: 0; font-size: 1.8rem; }
     header p { margin: 5px 0 0; opacity: 0.9; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; max-width: 1100px; margin: 0 auto; }
-    .card { background: white; padding: 18px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-decoration: none; color: #005f73; font-weight: bold; border-left: 5px solid #0a9396; transition: transform 0.2s, box-shadow 0.2s; }
-    .card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); background: #e0f2f1; }
-    .card span { display: block; font-size: 0.85rem; color: #666; font-weight: normal; margin-top: 5px; }
+    
+    /* Navigation Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; max-width: 1100px; margin: 0 auto 20px auto; }
+    .card { background: white; padding: 14px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; color: #005f73; font-weight: bold; border-left: 5px solid #0a9396; cursor: pointer; transition: transform 0.2s, background 0.2s; font-size: 0.95rem; }
+    .card:hover { transform: translateY(-3px); background: #e0f2f1; }
+    .card.active { background: #005f73; color: white; border-left-color: #ee9b00; }
+
+    /* Embedded Web Viewer */
+    .viewer-container { max-width: 1100px; margin: 0 auto; background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .viewer-title { margin: 0 0 10px 0; font-size: 1.1rem; color: #005f73; font-weight: bold; }
+    iframe { width: 100%; height: 680px; border: 1px solid #ddd; border-radius: 6px; background: #fafafa; }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Hostel Hot Water Thermodynamics</h1>
-    <p>Interactive Project Dashboard & Documentation Portal</p>
+    <p>Interactive Project Dashboard & Embedded Module Viewer</p>
   </header>
 
   <div class="grid">
-    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/hostel-hot-water-thermodynamics/01-Project-Overview" target="_blank">01. Project Overview <span>View documentation & objectives</span></a>
-    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/hostel-hot-water-thermodynamics/02-System-Study" target="_blank">02. System Study <span>View system architecture</span></a>
-    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/hostel-hot-water-thermodynamics/03-Thermodynamic-Analysis" target="_blank">03. Thermodynamic Analysis <span>View thermal equations</span></a>
-    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/hostel-hot-water-thermodynamics/04-Calculations" target="_blank">04. Calculations <span>View mathematical models</span></a>
-    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/hostel-hot-water-thermodynamics/05-Graphs" target="_blank">05. Graphs <span>View performance curves</span></a>
-    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/hostel-hot-water-thermodynamics/06-AI-Visualizations" target="_blank">06. AI Visualizations <span>View visual renders</span></a>
-    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/hostel-hot-water-thermodynamics/07-Thermodynamics-Simulator" target="_blank">07. Thermodynamics Simulator <span>Access interactive tool</span></a>
-    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/hostel-hot-water-thermodynamics/08-Documentary" target="_blank">08. Documentary <span>View project media</span></a>
-    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/hostel-hot-water-thermodynamics/09-Final-Report" target="_blank">09. Final Report <span>Read full report</span></a>
-    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/hostel-hot-water-thermodynamics/10-Field-Evidence" target="_blank">10. Field Evidence <span>View site measurements</span></a>
+    <!-- Note: Replace '.pdf' file paths below with your exact document file names if different -->
+    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/01-Project-Overview/overview.pdf', '01. Project Overview', this)">01. Overview</div>
+    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/02-System-Study/study.pdf', '02. System Study', this)">02. System Study</div>
+    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/03-Thermodynamic-Analysis/analysis.pdf', '03. Thermodynamic Analysis', this)">03. Thermal Analysis</div>
+    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/04-Calculations/calculations.pdf', '04. Calculations', this)">04. Calculations</div>
+    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/05-Graphs/graphs.pdf', '05. Performance Graphs', this)">05. Graphs</div>
+    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/06-AI-Visualizations/renders.pdf', '06. AI Visualizations', this)">06. AI Renders</div>
+    <div class="card active" onclick="loadModule('./hostel-hot-water-thermodynamics/07-Thermodynamics-Simulator/index.html', '07. Thermodynamics Simulator', this)">07. Simulator ⚡</div>
+    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/08-Documentary/doc.pdf', '08. Documentary', this)">08. Documentary</div>
+    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/09-Final-Report/report.pdf', '09. Final Report', this)">09. Final Report</div>
+    <div class="card" onclick="loadModule('./hostel-hot-water-thermodynamics/10-Field-Evidence/evidence.pdf', '10. Field Evidence', this)">10. Field Evidence</div>
   </div>
+
+  <div class="viewer-container">
+    <div id="viewer-header" class="viewer-title">07. Thermodynamics Simulator</div>
+    <iframe id="app-frame" src="./hostel-hot-water-thermodynamics/07-Thermodynamics-Simulator/index.html" title="Module Content"></iframe>
+  </div>
+
+  <script>
+    function loadModule(url, title, element) {
+      document.getElementById('app-frame').src = url;
+      document.getElementById('viewer-header').innerText = title;
+      
+      // Update active button styling
+      let cards = document.querySelectorAll('.card');
+      cards.forEach(card => card.classList.remove('active'));
+      element.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>

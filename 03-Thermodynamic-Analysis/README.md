@@ -1,7 +1,7 @@
 # Module 03: Comprehensive Thermodynamic Analysis
 
-## 1. Executive Overview & System Constants
-This module provides the core First Law formulations, Steady-Flow Energy Balance (SFEE), and heat transfer calculations governing the 25 L storage water heaters across campus hostel blocks.
+## 1. Executive Overview & System Parameters
+This module details the First Law thermodynamic formulations, Steady-Flow Energy Balance (SFEE), and heat transfer calculations governing the 25 L storage water heaters across campus hostel blocks.
 
 ### Baseline Parameters
 * **Storage Volume (V):** 25 Liters (Mass m = 25.0 kg)

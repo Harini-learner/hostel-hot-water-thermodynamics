@@ -1,0 +1,9 @@
+Parameter,Value,Unit,Basis
+Hostels,7,count,Field observation
+Total heaters,58,count,Field observation
+Normal water temperature,37,deg C,Field measurement
+Heated outlet temperature,>45,deg C,Field measurement
+Long non-use availability time,5,min,Field observation
+Frequent-use availability time,1,min,Field observation
+Representative capacity,25,L,Nameplate/document
+Representative power,2,kW,Nameplate/document

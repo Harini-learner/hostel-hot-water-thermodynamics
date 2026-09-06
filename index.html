@@ -1,16 +1,39 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hostel Hot-Water Thermodynamics Simulator</title><link rel="stylesheet" href="style.css"></head><body><main><h1>Hostel Hot-Water Thermodynamics Simulator</h1><p class="note">Use measured values when available. Current defaults reflect the field-study reference values.</p><section class="card"><label>Water mass (kg)<input id="m" type="number" value="25" step="0.1"></label><label>Initial temperature (°C)<input id="t1" type="number" value="37" step="0.1"></label><label>Final/reference temperature (°C)<input id="t2" type="number" value="45" step="0.1"></label><label>Specific heat (kJ/kg·K)<input id="cp" type="number" value="4.18" step="0.01"></label><label>Heater power (kW)<input id="p" type="number" value="2" step="0.1"></label><label>Operating time (min)<input id="time" type="number" value="5" step="0.1"></label><button onclick="calc()">Calculate</button></section><section class="results"><div><b>Temperature rise</b><span id="dt">—</span></div><div><b>Useful heat</b><span id="q">—</span></div><div><b>Electrical input</b><span id="e">—</span></div><div><b>Reference efficiency</b><span id="eta">—</span></div></section><p class="note">Efficiency is only a reference ratio using the entered values. It should not be reported as measured heater efficiency unless the electrical input and useful water heating correspond to the same experiment.</p></main><script src="script.js"></script></body></html>
-<section id="project-folders">
-  <h2>Project Navigation & Documentation</h2>
-  <ul>
-    <li><a href="./01-Project-Overview/">01 - Project Overview</a></li>
-    <li><a href="./02-System-Study/">02 - System Study</a></li>
-    <li><a href="./03-Thermodynamic-Analysis/">03 - Thermodynamic Analysis</a></li>
-    <li><a href="./04-Calculations/">04 - Calculations</a></li>
-    <li><a href="./05-Graphs/">05 - Graphs</a></li>
-    <li><a href="./06-AI-Visualizations/">06 - AI Visualizations</a></li>
-    <li><a href="./07-Thermodynamics-Simulator/">07 - Thermodynamics Simulator</a></li>
-    <li><a href="./08-Documentary/">08 - Documentary</a></li>
-    <li><a href="./09-Final-Report/">09 - Final Report</a></li>
-    <li><a href="./10-Field-Evidence/">10 - Field Evidence</a></li>
-  </ul>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel Hot Water Thermodynamics</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: #f4f7f6; color: #333; }
+    header { text-align: center; padding: 20px 0; background: #005f73; color: white; border-radius: 10px; margin-bottom: 25px; }
+    header h1 { margin: 0; font-size: 1.8rem; }
+    header p { margin: 5px 0 0; opacity: 0.9; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; max-width: 1100px; margin: 0 auto; }
+    .card { background: white; padding: 18px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-decoration: none; color: #005f73; font-weight: bold; border-left: 5px solid #0a9396; transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); background: #e0f2f1; }
+    .card span { display: block; font-size: 0.85rem; color: #666; font-weight: normal; margin-top: 5px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hostel Hot Water Thermodynamics</h1>
+    <p>Interactive Project Dashboard & Documentation Portal</p>
+  </header>
+
+  <div class="grid">
+    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/01-Project-Overview" target="_blank">01. Project Overview <span>View documentation & objectives</span></a>
+    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/02-System-Study" target="_blank">02. System Study <span>View system architecture</span></a>
+    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/03-Thermodynamic-Analysis" target="_blank">03. Thermodynamic Analysis <span>View thermal equations</span></a>
+    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/04-Calculations" target="_blank">04. Calculations <span>View mathematical models</span></a>
+    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/05-Graphs" target="_blank">05. Graphs <span>View performance curves</span></a>
+    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/06-AI-Visualizations" target="_blank">06. AI Visualizations <span>View visual renders</span></a>
+    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/07-Thermodynamics-Simulator" target="_blank">07. Thermodynamics Simulator <span>Access interactive tool</span></a>
+    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/08-Documentary" target="_blank">08. Documentary <span>View project media</span></a>
+    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/09-Final-Report" target="_blank">09. Final Report <span>Read full report PDF</span></a>
+    <a class="card" href="https://github.com/Harini-learner/hostel-hot-water-thermodynamics/tree/main/10-Field-Evidence" target="_blank">10. Field Evidence <span>View site measurements</span></a>
+  </div>
+
+</body>
+</html>
